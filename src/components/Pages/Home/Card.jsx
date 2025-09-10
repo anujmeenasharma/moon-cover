@@ -26,7 +26,7 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
         <div className='absolute bottom-0 left-0'>
           <img src="/cardIcon.svg" alt={title} width={250} height={250} />
         </div>
-        <h1 className={`telegraf text-5xl uppercase font-bold text-[${color}]`}>
+        <h1 className={`telegraf text-5xl uppercase font-bold text-center`} style={{ color: color }}>
           {title}
         </h1>
         <p className='text-lg font-light text-center max-w-lg'>
