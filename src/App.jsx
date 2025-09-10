@@ -31,6 +31,21 @@ function App() {
         toggleActions: "play none none reverse"
       }
     })
+
+    gsap.to("#launchlab", {
+      backgroundColor: "transparent",
+      duration: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top -820%",
+        end: "+=1000",
+        scrub: 1,
+        toggleActions: "play none none reverse"
+      }
+    })
+
+
   })
   
   return (
