@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlobalScene from "../../GlobalScene";
+import ScrambleText from "../../UiComponents/ScrambleText";
 
 const LaunchLab = () => {
   const launchLabRef = useRef(null);
@@ -150,9 +151,10 @@ const LaunchLab = () => {
               ref={textRef}
               className="flex flex-col gap-6 will-change-transform"
             >
-              <h1 className="text-5xl uppercase font-black telegraf">
+              {/* <h1 className="text-5xl uppercase font-black telegraf">
                 {modelContent[modelIndex].title}
-              </h1>
+              </h1> */}
+              <ScrambleText textSize="5xl" text={modelContent[modelIndex].title} trigger={modelIndex}/>
               <p className="w-[70%] mx-auto font-light text-sm">
                 {modelContent[modelIndex].description}
               </p>
@@ -161,8 +163,8 @@ const LaunchLab = () => {
               className="absolute bottom-7 left-1/3 -translate-x-1/2"
               ref={counterRef}
             >
-              <div className="flex flex-col h-6 overflow-hidden font-bold">
-                <div ref={numbersWrapperRef} className="flex flex-col">
+              <div className="flex flex-col h-6 overflow-hidden font-bold w-full relative">
+                <div className="flex flex-col" ref={numbersWrapperRef}>
                   <span>01</span>
                   <span>02</span>
                   <span>03</span>

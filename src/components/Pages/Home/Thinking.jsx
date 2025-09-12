@@ -1,3 +1,5 @@
+import ScrambleText from "../../UiComponents/ScrambleText";
+
 const Thinking = () => {
   return (
     <div className="h-screen w-full flex justify-center relative z-20">
@@ -6,9 +8,12 @@ const Thinking = () => {
           <img src="/landingMain.svg" alt="mainLanding" className="w-20" />
         </div>
         <div className="flex flex-col gap-3">
-          <h1 className="text-4xl telegraf uppercase font-bold pb-4">
+          {/* <h1 className="text-4xl telegraf uppercase font-bold pb-4">
             Beyond traditional thinking
-          </h1>
+          </h1> */}
+          <div className="pb-4 whitespace-nowrap">
+            <ScrambleText textSize="4xl" text="Beyond traditional thinking" />
+          </div>
           <h3 className="text-sm uppercase font-bold telegraf">
             Why Most Brand "Aggregators" Miss the Point
           </h3>
@@ -19,7 +24,7 @@ const Thinking = () => {
           </p>
         </div>
         <div>
-          <p className="text-sm font-light para-text" >
+          <p className="text-sm font-light para-text">
             We compound outcomes, not just collect logos. Our focus is
             systematic brand building, not vanity metrics. We bet on emotional
             resonance, not financial engineering. Real value comes from consumer
