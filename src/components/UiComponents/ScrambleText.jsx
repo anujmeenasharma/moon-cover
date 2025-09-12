@@ -4,7 +4,7 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
-export default function ScrambleText({ textSize = "3xl", text, trigger = false }) {
+export default function ScrambleText({ textSize, text, trigger = false }) {
   const textRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -71,11 +71,11 @@ export default function ScrambleText({ textSize = "3xl", text, trigger = false }
 
   return (
     <h1
-      className={`text-${textSize} uppercase font-bold will-change-transform relative w-full leading-snug`}
+      className={`text-${textSize} uppercase font-bold leading-none will-change-transform relative w-full leading-snug`}
       ref={textRef}
     >
       {text.split(" ").map((word, i) => (
-        <span key={i} data-text={word} className="inline-block mr-2">
+        <span key={i} data-text={word} className="inline-block mr-2 leading-none">
           {word}
         </span>
       ))}

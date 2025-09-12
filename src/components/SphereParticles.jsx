@@ -139,9 +139,9 @@ useEffect(() => {
     // Scroll-driven blast animation
     ScrollTrigger.create({
       trigger: document.documentElement,
-      start: "top -12000px",
-      end: "+=2500", // 3000px scroll distance for blast animation
-      scrub: 0.1,
+      start: "top -8500px",
+      end: "+=1500", // 3000px scroll distance for blast animation
+      scrub: 1,
       onUpdate: (self) => {
         // Update blast progress based on scroll progress
         blastProgressRef.current = self.progress;

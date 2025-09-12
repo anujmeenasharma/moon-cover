@@ -68,7 +68,7 @@ const LandingPage = () => {
           </div>
           <p
             ref={textRef3}
-            className="text-center will-change-transform font-light text-sm w-[50%] mx-auto"
+            className="text-center will-change-transform font-light text-sm w-[60%] mx-auto"
           >
             the intersection of creative intution and strategic intelligence.
             where breakthrough products become household names and bold ideas

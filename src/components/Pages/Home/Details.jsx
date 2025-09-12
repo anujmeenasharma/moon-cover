@@ -115,7 +115,7 @@ const Details = () => {
         <div className="relative text-center w-full" ref={titleRef}>
           <ScrambleText textSize="5xl" text="we don't flip brands. we build futures."/>
         </div>
-        <div className="relative text-center w-[50%]">
+        <div className="relative text-center w-[70%]">
           <p ref={detailsRef} className="animate-me" aria-hidden="true">
             Most brand builders chase quick exits and financial engineering. We craft enduring consumer experiences that own moments, shape categories, and live in people's daily lives. Our approach combines the creative instincts of a growth studio with the operational precision of a technology platform. We identify high-potential consumer products, then apply our proprietary LaunchLab™ system to build authentic brand stories that resonate with modern audiences.
           </p>

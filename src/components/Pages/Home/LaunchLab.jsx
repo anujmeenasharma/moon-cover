@@ -135,8 +135,8 @@ const LaunchLab = () => {
           className="w-full h-screen z-40 absolute top-0 left-0 flex items-center justify-center"
           style={{ pointerEvents: "none" }}
         >
-          <div className="text-center flex flex-col gap-[25vw] launchlab-text w-full items-center">
-            <div className="flex flex-col items-center gap-4">
+          <div className="text-center flex flex-col gap-[20vw] launchlab-text w-full items-center">
+            <div className="flex flex-col items-center gap-2">
               <p className="text-sm uppercase font-light">
                 Where Science Meets Story
               </p>
@@ -149,7 +149,7 @@ const LaunchLab = () => {
             </div>
             <div
               ref={textRef}
-              className="flex flex-col gap-6 will-change-transform"
+              className="flex flex-col gap-2 will-change-transform"
             >
               {/* <h1 className="text-5xl uppercase font-black telegraf">
                 {modelContent[modelIndex].title}
@@ -160,7 +160,7 @@ const LaunchLab = () => {
               </p>
             </div>
             <div
-              className="absolute bottom-7 left-1/3 -translate-x-1/2"
+              className="absolute bottom-20 left-1/3 -translate-x-1/2"
               ref={counterRef}
             >
               <div className="flex flex-col h-6 overflow-hidden font-bold w-full relative">

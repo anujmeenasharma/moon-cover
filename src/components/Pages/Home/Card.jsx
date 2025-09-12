@@ -19,7 +19,7 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
           top: `calc(-12vh + ${i * 120}px)`,
           borderTop: '20px solid #0B0B0C',
         }} 
-        className="flex relative -top-1/4 h-[40vh] w-[40vw] max-w-[90vw] rounded-[50px] p-12 origin-top flex-col gap-4 justify-center items-center backdrop-blur-3xl overflow-hidden shadow-lg"
+        className="flex relative -top-1/4 h-[38vh] w-[36vw] max-w-[90vw] rounded-[50px] p-12 origin-top flex-col gap-4 justify-center items-center backdrop-blur-3xl overflow-hidden shadow-lg"
       >
         <div className='absolute top-10 left-10'>
           <img src="/arrowTopRight.svg" alt={title} width={20} height={20} />
@@ -31,9 +31,9 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
           {title}
         </h1> */}
         <div className='text-center whitespace-pre-wrap w-[70%] flex-center' style={{ color: color }}>
-          <ScrambleText textSize='5xl' text={title}/>
+          <ScrambleText textSize='4xl' text={title}/>
         </div>
-        <p className='text-lg font-light text-center max-w-lg'>
+        <p className='text-xs font-light text-center max-w-xs'>
           {description}
         </p>
       </motion.div>

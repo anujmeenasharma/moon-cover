@@ -95,8 +95,8 @@ export const TorusParticles = ({ nbParticles = 600000, active = true, onBloomUpd
     const masterTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: document.documentElement,
-        start: "top -1190%",
-        end: "+=2500", // Total scroll distance for all phases
+        start: "top -8600px",
+        end: "+=2000", // Total scroll distance for all phases
         scrub: 0.6,
         invalidateOnRefresh: true,
         onUpdate: () => invalidate(),
@@ -108,7 +108,7 @@ export const TorusParticles = ({ nbParticles = 600000, active = true, onBloomUpd
 
     // Phase 1: Move to center and rotate (0 to 2500 scroll units)
     masterTimeline.to(groupRef.current.position, {
-        z: -0.7,
+        z: -0.5,
         duration: 500, // Corresponds to +=2500 scroll units
         ease: "none",
       })

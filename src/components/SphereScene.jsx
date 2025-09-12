@@ -1,55 +1,16 @@
-import { Stats } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useControls } from "leva";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three/webgpu";
 import { Sphere } from "./Sphere";
 import { Torus } from "./Torus";
-import { SphereProcessing } from "./SphereProcessing";
+// Bloom post-processing removed to prevent black background issues
 
 function SphereScene() {
   const [frameloop, setFrameloop] = useState("never");
   const canvasElRef = useRef(null);
-  const ppSettings = useControls("Post Processing", {
-    strength: {
-      value: 4.5,
-      min: 0,
-      max: 30,
-      step: 0.1,
-    },
-    radius: {
-      value: 1.0,
-      min: 0,
-      max: 4,
-      step: 0.1,
-    },
-    threshold: {
-      value: 0.0,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-  });
-
-  // Animated PostProcessing values (start at current controls)
-  const [ppStrength, setPpStrength] = useState(ppSettings.strength);
-  const [ppRadius, setPpRadius] = useState(ppSettings.radius);
-  const [ppThreshold, setPpThreshold] = useState(ppSettings.threshold);
-  const basePPRef = useRef({ strength: ppSettings.strength, radius: ppSettings.radius, threshold: ppSettings.threshold });
-
-  // Keep base in sync if user moves the Leva sliders
-  useEffect(() => {
-    basePPRef.current = {
-      strength: ppSettings.strength,
-      radius: ppSettings.radius,
-      threshold: ppSettings.threshold,
-    };
-    setPpStrength(ppSettings.strength);
-    setPpRadius(ppSettings.radius);
-    setPpThreshold(ppSettings.threshold);
-  }, [ppSettings.strength, ppSettings.radius, ppSettings.threshold]);
+  // Post-processing controls removed
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -89,34 +50,7 @@ function SphereScene() {
     return () => ctx.revert();
   }, [frameloop]);
 
-  // Scroll-driven bloom increase: start from current Leva values → go to max
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      const progress = { p: 0 };
-      gsap.to(progress, {
-        p: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: "top top",
-          end: "+=3000",
-          scrub: 0.6,
-        },
-        onUpdate: () => {
-          const base = basePPRef.current;
-          // Animate to explicit targets provided by user
-          const targetStrength = 10;
-          const targetRadius = 1.5;
-          const targetThreshold = 0.0;
-          setPpStrength(base.strength + progress.p * (targetStrength - base.strength));
-          setPpRadius(base.radius + progress.p * (targetRadius - base.radius));
-          setPpThreshold(base.threshold + progress.p * (targetThreshold - base.threshold));
-        },
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  // Bloom scroll animation removed
 
   return (
     <>
@@ -154,7 +88,7 @@ function SphereScene() {
           <Sphere />
           <Torus />
         </Suspense>
-        <SphereProcessing strength={ppStrength} radius={ppRadius} threshold={ppThreshold} />
+        {/* Post-processing removed */}
       </Canvas>
     </>
   );

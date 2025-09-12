@@ -18,38 +18,38 @@ function App() {
   const containerRef = useRef(null)
   useLenis()
 
-  useGSAP(()=>{
-    gsap.to("#launchlab", {
-      backgroundColor: "#dadada",
-      duration: 1,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top -450%",
-        end: "+=1000",
-        scrub: 1,
-        toggleActions: "play none none reverse"
-      }
-    })
+  // useGSAP(()=>{
+  //   gsap.to("#launchlab", {
+  //     backgroundColor: "#dadada",
+  //     duration: 1,
+  //     ease: "power2.inOut",
+  //     scrollTrigger: {
+  //       trigger: containerRef.current,
+  //       start: "top -450%",
+  //       end: "+=1000",
+  //       scrub: 1,
+  //       toggleActions: "play none none reverse"
+  //     }
+  //   })
 
-    gsap.to("#launchlab", {
-      backgroundColor: "transparent",
-      duration: 1,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top -820%",
-        end: "+=1000",
-        scrub: 1,
-        toggleActions: "play none none reverse"
-      }
-    })
+  //   gsap.to("#launchlab", {
+  //     backgroundColor: "transparent",
+  //     duration: 1,
+  //     ease: "power2.inOut",
+  //     scrollTrigger: {
+  //       trigger: containerRef.current,
+  //       start: "top -820%",
+  //       end: "+=1000",
+  //       scrub: 1,
+  //       toggleActions: "play none none reverse"
+  //     }
+  //   })
 
 
-  })
+  // })
   
   return (
-    <div className="relative h-full w-full" ref={containerRef}>
+    <div className="relative" ref={containerRef}>
       <SparkCursor 
         sparkColor='#fff'
         sparkSize={10}

@@ -3,7 +3,7 @@ import ScrambleText from "../../UiComponents/ScrambleText";
 const Thinking = () => {
   return (
     <div className="h-screen w-full flex justify-center relative z-20">
-      <div className="h-screen w-[45vw] flex flex-col justify-center gap-32 px-2">
+      <div className="h-screen w-[45vw] flex flex-col justify-center gap-16 px-2">
         <div className="absolute left-[60vw] top-1/3 logo opacity-[0.2] rotate-90 scale-[0.1]">
           <img src="/landingMain.svg" alt="mainLanding" className="w-20" />
         </div>
@@ -17,7 +17,7 @@ const Thinking = () => {
           <h3 className="text-sm uppercase font-bold telegraf">
             Why Most Brand "Aggregators" Miss the Point
           </h3>
-          <p className="text-sm font-light w-[40%]">
+          <p className="text-sm font-light w-[65%]">
             Traditional approaches prioritize spreadsheets over storytelling.
             They optimize for multiple arbitrage instead of building genuine
             brand equity.

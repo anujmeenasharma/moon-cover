@@ -58,7 +58,6 @@ const StackCards = () => {
             start: "bottom bottom",
             end: "+=80%",
             scrub: 1,
-            markers: true,
           },
           y: -(total - index) * 200,
           ease: "power2.out",
@@ -69,14 +68,14 @@ const StackCards = () => {
 
   return (
     <div ref={container} className="relative z-20 mt-[50vh] min-h-screen">
-      <div className="h-screen sticky top-0 w-full flex items-center justify-between px-44">
+      <div className="h-screen sticky top-0 w-full flex items-center justify-between px-32">
         {/* <h1 className="text-4xl font-bold telegraf uppercase w-[20%] content">
           BUILT for builders who think bigger
         </h1> */}
         <div className="w-[25%] relative z-[1000]">
           <ScrambleText textSize="4xl" text="BUILT for builders who think bigger"/>
         </div>
-        <p className="text-sm w-[20%] content">
+        <p className="text-sm w-[25%] content">
           We work with brands that share our belief: that great products deserve
           grestorytelling, and that authentic consumer connection drives
           sustainable competitiadvantage.
